@@ -15,20 +15,26 @@
       background: url("https://cdnstatic8.com/viagensecaminhos.com/wp-content/uploads/2012/03/sao-vicente.jpg");
       background-size: cover;
       background-repeat: no-repeat;
-      background-color: #FDFFB6;
+      background-color: #070707;
       width: 100%;
+      text-align: center;
+      text-justify: center;
+      align-items: center;
     }
 
-    .transparencia{
+    fieldset{
       background: rgb(34,193,195);
       background: -moz-linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,0.469625350140056) 100%);
       background: -webkit-linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,0.469625350140056) 100%);  
       background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,0.469625350140056) 100%);
       width: 100%;
       height: 100%;
-      
+      border-radius:15px;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      font-size: 15px;
+      padding: 0;
     }
-
     .titulo{
       font-family: Praise, Arial, Helvetica, sans-serif;
       text-align: center;
@@ -59,6 +65,9 @@
       padding:10px 10px;
       text-decoration:none;
       text-align: center;  
+      display: inline;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
     /* -------- SEÇÃO DA ANIMAÇÃO ---- */
@@ -85,6 +94,7 @@
             border:1px solid orangered;
             box-shadow:inset 1px 1px 1px 1px;
             text-shadow:0px 1px 0px #7db623;
+            width:160px;
         }
       .limpar:hover {
             background-color: rgb(221, 56, 56);
@@ -114,8 +124,83 @@
             height: auto;
             width: 1000px;
         }
+        .input_text{
+          text-align: center;
+          background: rgba(0, 0, 0, 0.589) ;
+          color: white;
+          width: 30%;
+          height: 40px;
+          border-radius: 10px;
 
+        }
+        *{
+          box-sizing: border-box;
+        }
+        h2{
 
+          border-radius: 15px;
+        }
+        .input_text::placeholder{
+          color: white;
+          font-family: cursive;
+        }
+        .input_text:focus{
+          transition: 1s;
+          border-radius: 10px;
+          background-color: rgba(61, 75, 75, 0.274);
+          color: black;
+          font-size: 25px; 
+
+        
+        
+        }
+
+        .nome{
+          padding: 0;
+        }
+
+        .inputs_date{
+          background-color: rgba(13, 13, 14, 0.349);
+          border-radius: 12px;
+          font-size: 20px;
+          width: 200px;
+          text-align: center;
+
+        }
+
+        .inputs_date:focus{
+          background-color: burlywood;
+          font-size: 25px;
+          transition: 3s;
+
+        }
+
+        .inputs_date:hover{
+          transition: 3s;
+        }
+
+        .inputs{
+          font-size: 15px;
+          font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          padding: 10px;
+       }
+       .interesse:focus{
+         background-color: rgba(137, 43, 226, 0);
+         font-size: 20px;
+         transition: 2s;
+         border-radius: 6px;
+         color: black;
+       }
+
+       .interesse{
+         border-radius: 6px;
+         font-size: 16px;
+         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+       }
+
+       .tus{
+        font-size: 20px;
+       }
   </style>
 
 </head>
@@ -132,33 +217,35 @@
         <div class="nome">
           <h2>Nome</h2>
           <div>
-            <label form="nome">Nome</label>
-            <input 
+            <label class="text_label" form="nome"></label>
+            <input class="input_text" 
               type="text" required
               name="nome"
               id="nome"
               placeholder="Digite seu nome"
               maxlength="100"
             >
-          </div>
+          </div> <hr>
         </div>
         <div class="email">
           <h2>E-mail</h2>
-          <div>
-            <label form="email">E-mail</label>
-            <input 
+          <di v>
+            <label form="email">
+            </label>
+            <input class="input_text" 
               type="email" required
               name="emailDoUsuario"
               id="email"
               placeholder="Digite seu e-mail"
             >
-          </div>
+          </div><hr>
         </div>
+        <fieldset>
         <div class="telefone">
           <h2>Telefone</h2>
           <div>
-            <label form="telefone">Telefone</label>
-            <input 
+            <label form="telefone"></label>
+            <input class="input_text" 
               type="tel" required
               name="telefoneDoUsuario"
               id="telefone"
@@ -166,44 +253,46 @@
               minlength=10
               minlength=11
             >
-            </div>
+            </div><hr>
           </div>
+          
         <div class="nascimento">
           <h2>Data de Nascimento</h1>
           <div>
-            <label form="nascimento">Data de Nascimento</label>
-            <input 
+            <label form="nascimento"></label>
+            <input class="inputs_date" 
               type="date" required
               name="nascimentoUsuario"
               id="nascimento"
               placeholder="Digite sua data de nascimento"
             >
-          </div>
+          </div><hr>
         </div>
 
     <div class="pergunta">
       <h2>Você é maior de idade?</h2>
-        <div>
-          <input 
+        <div class>
+          <input class="inputs" 
           type="radio" 
           name="idade" 
           value="sim"
           id="idade"
           required
           >
-          <label for="idade">Sim</label>
+          <label class="inputs" for="idade">Sim</label>
         </div>
         <div>
-          <input 
+          <input class="inputs" 
             type="radio" 
             name="idade" 
             value="nao"
             id="idade"
             required
           >
-          <label for="idade">Não</label>
+          <label class="inputs" for="idade">Não</label>
         </div>
-    </div>
+    </div><hr>
+  </fieldset>
     </fieldset>
     
     <fieldset>
@@ -215,7 +304,7 @@
               <select 
                 name="pontosInteresse" 
                 id="pontosInteresse"
-              >
+              class="interesse">
               <option value="ponto1">Praia Gonzaguinha</option>
               <option value="ponto2">Ilha Porchat</option>
               <option value="ponto2">Biquinha</option>
@@ -233,7 +322,7 @@
               id="Turista"
               value="Turista"
             >
-            <label for="Turista">Turista</label>
+            <label class="tus" for="Turista">Turista</label>
           </div>
           <div>
             <input 
@@ -242,7 +331,7 @@
               id="Residente"
               value="Residente"
             >
-            <label for="Residente">Residente</label>
+            <label class="tus"  for="Residente">Residente</label>
           </div>
           <div>
             <input 
@@ -251,20 +340,18 @@
               id="Estudante"
               value="Estudante"
             >
-            <label for="Estudante">Estudante</label>
+            <label class="tus"  for="Estudante">Estudante</label>
           </div>
         </div>
     </fieldset>
 
     <section class="botao">
-      <div class="botao enviar">
-        <button type="submit">Enviar formulário</button>
-      </div>  
-      <div class="botao limpar">
-        <button type="reset">Limpar formulário</button>
+        <button class="botao enviar" type="submit">Enviar formulário</button> 
+        <button class="botao limpar" type="reset">Limpar formulário</button>
       </div> 
     </section> 
   </form>
   </div>
 </body>
 </html>
+
